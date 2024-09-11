@@ -46,5 +46,72 @@
             return c;
         }
 
+        /// <summary>
+        /// Newton raphson goalseek method to find the root of a function
+        /// </summary>
+        /// <param name="x0"></param>
+        /// <param name="tolerance"></param>
+        /// <param name="maxIterations"></param>
+        /// <param name="mathFunction"></param>
+        /// <param name="mathFunctionDerivative"></param>
+        /// <returns></returns>
+        public static double NewtonRaphson(double x0, double tolerance, int maxIterations, Func<double, double> mathFunction, Func<double, double> mathFunctionDerivative)
+        {
+            double x = x0;
+            for (int i = 0; i < maxIterations; i++)
+            {
+                double functionX = mathFunction(x);
+                double derivativeX = mathFunctionDerivative(x);
+                double x1 = x - functionX / derivativeX;
+                if (Math.Abs(x1 - x) < tolerance)
+                {
+                    break;
+                }
+                x = x1;
+            }
+            return x;
+        }
+
+        /// <summary>
+        /// Binomial goalseek calculator to find the root of a function
+        /// </summary>
+        /// <param name="valueA"></param>
+        /// <param name="valueB"></param>
+        /// <param name="tolerance"></param>
+        /// <param name="maxIterations"></param>
+        /// <param name="mathFunction"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        public static double Binomial(double valueA, double valueB, double tolerance, int maxIterations, Func<double, double> mathFunction)
+        {
+            double functionA = mathFunction(valueA);
+            double functionB = mathFunction(valueB);
+            if (functionA * functionB > 0)
+            {
+                throw new ArgumentException("function(a) and function(b) must have opposite signs");
+            }
+            double c = 0;
+            for (int i = 0; i < maxIterations; i++)
+            {
+                c = (valueA + valueB) / 2;
+                double functionC = mathFunction(c);
+                if (Math.Abs(functionC) < tolerance)
+                {
+                    break;
+                }
+                if (functionA * functionC < 0)
+                {
+                    valueB = c;
+                    functionB = functionC;
+                }
+                else
+                {
+                    valueA = c;
+                    functionA = functionC;
+                }
+            }
+            return c;
+        }
+
     }
 }
