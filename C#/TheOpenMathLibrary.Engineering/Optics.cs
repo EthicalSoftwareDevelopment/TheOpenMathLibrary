@@ -128,5 +128,30 @@ namespace TheOpenMathLibrary.Engineering
             return radiosity;
         }
 
+        /// <summary>
+        /// Spectral radiance function 
+        /// </summary>
+        /// <param name="radiance"></param>
+        /// <param name="wavelength"></param>
+        /// <returns></returns>
+        public static double SpectralRadiance(double radiance, double wavelength)
+        {
+            double spectralRadiance = 0;
+            spectralRadiance = radiance / wavelength;
+            return spectralRadiance;
+        }
+
+        /// <summary>
+        /// spectral irradiance function 
+        /// </summary>
+        /// <param name="irradiance"></param>
+        /// <param name="wavelength"></param>
+        /// <returns></returns>
+        public static double SpectralIrradiance(double irradiance, double wavelength)
+        {
+            double spectralIrradiance = 0;
+            spectralIrradiance = irradiance / wavelength;
+            return spectralIrradiance;
+        }
     }
 }
