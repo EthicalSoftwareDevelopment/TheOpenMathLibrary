@@ -153,5 +153,71 @@ namespace TheOpenMathLibrary.Engineering
             spectralIrradiance = irradiance / wavelength;
             return spectralIrradiance;
         }
+
+        /// <summary>
+        /// Energy density in an EM wave 
+        /// </summary>
+        /// <param name="electricField"></param>
+        /// <param name="magneticField"></param>
+        /// <returns></returns>
+        public static double EnergyDensity(double electricField, double magneticField)
+        {
+            double energyDensity = 0;
+            energyDensity = 0.5 * (electricField * electricField + magneticField * magneticField);
+            return energyDensity;
+        }
+
+        /// <summary>
+        /// Kinetic and potential momenta of light 
+        /// </summary>
+        /// <param name="speedOfLight"></param>
+        /// <param name="mass"></param>
+        /// <returns></returns>
+        public static double KineticMomentum(double speedOfLight, double mass)
+        {
+            double kineticMomentum = 0;
+            kineticMomentum = speedOfLight * mass;
+            return kineticMomentum;
+        }
+
+        /// <summary>
+        /// Doppler effect for light 
+        /// </summary>
+        /// <param name="frequency"></param>
+        /// <param name="speedOfLight"></param>
+        /// <param name="observerSpeed"></param>
+        /// <returns></returns>
+        public static double DopplerEffect(double frequency, double speedOfLight, double observerSpeed)
+        {
+            double dopplerEffect = 0;
+            dopplerEffect = frequency * (speedOfLight + observerSpeed) / speedOfLight;
+            return dopplerEffect;
+        }
+
+        /// <summary>
+        /// cherenkov radiation 
+        /// </summary>
+        /// <param name="speedOfLight"></param>
+        /// <param name="refractiveIndex"></param>
+        /// <returns></returns>
+        public static double CherenkovRadiation(double speedOfLight, double refractiveIndex)
+        {
+            double cherenkovRadiation = 0;
+            cherenkovRadiation = speedOfLight / refractiveIndex;
+            return cherenkovRadiation;
+        }
+
+        /// <summary>
+        /// EM wave components 
+        /// </summary>
+        /// <param name="electricField"></param>
+        /// <param name="magneticField"></param>
+        /// <returns></returns>
+        public static double EMWaveComponent(double electricField, double magneticField)
+        {
+            double emWaveComponent = 0;
+            emWaveComponent = Math.Sqrt(electricField * electricField + magneticField * magneticField);
+            return emWaveComponent;
+        }
     }
 }
