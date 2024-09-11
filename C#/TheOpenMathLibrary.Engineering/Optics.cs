@@ -219,5 +219,59 @@ namespace TheOpenMathLibrary.Engineering
             emWaveComponent = Math.Sqrt(electricField * electricField + magneticField * magneticField);
             return emWaveComponent;
         }
+
+
+        /// <summary>
+        /// Critical angle function 
+        /// </summary>
+        /// <param name="refractiveIndex1"></param>
+        /// <param name="refractiveIndex2"></param>
+        /// <returns></returns>
+        public static double CriticalAngle(double refractiveIndex1, double refractiveIndex2)
+        {
+            double criticalAngle = 0;
+            criticalAngle = Math.Asin(refractiveIndex2 / refractiveIndex1);
+            return criticalAngle;
+        }
+
+        /// <summary>
+        /// Thin lens equation function 
+        /// </summary>
+        /// <param name="focalLength"></param>
+        /// <param name="objectDistance"></param>
+        /// <param name="imageDistance"></param>
+        /// <returns></returns>
+        public static double ThinLensEquation(double focalLength, double objectDistance, double imageDistance)
+        {
+            double thinLensEquation = 0;
+            thinLensEquation = 1 / focalLength - 1 / objectDistance + 1 / imageDistance;
+            return thinLensEquation;
+        }
+
+        /// <summary>
+        /// Image distance in a plane mirror function 
+        /// </summary>
+        /// <param name="objectDistance"></param>
+        /// <returns></returns>
+        public static double ImageDistancePlaneMirror(double objectDistance)
+        {
+            double imageDistancePlaneMirror = 0;
+            imageDistancePlaneMirror = -objectDistance;
+            return imageDistancePlaneMirror;
+        }
+
+        /// <summary>
+        /// Spherical mirror equation function 
+        /// </summary>
+        /// <param name="focalLength"></param>
+        /// <param name="objectDistance"></param>
+        /// <param name="imageDistance"></param>
+        /// <returns></returns>
+        public static double SphericalMirrorEquation(double focalLength, double objectDistance, double imageDistance)
+        {
+            double sphericalMirrorEquation = 0;
+            sphericalMirrorEquation = 1 / focalLength - 1 / objectDistance + 1 / imageDistance;
+            return sphericalMirrorEquation;
+        }
     }
 }
