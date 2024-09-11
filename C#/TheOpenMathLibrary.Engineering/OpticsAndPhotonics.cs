@@ -9,7 +9,7 @@ namespace TheOpenMathLibrary.Engineering
     /// <summary>
     /// This class contains functions for calculating various properties of light and electromagnetic radiation. It includes functions for calculating magnification, image height, image distance, poynting vector, poynting flux, RMS electric field, radiation momentum, radiant intensity, and radiosity. These functions can be used in physics and engineering applications to analyze and design optical systems.
     /// </summary>
-    public class Optics
+    public class OpticsAndPhotonics
     {
         /// <summary>
         /// magnification function
