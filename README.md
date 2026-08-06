@@ -1,4 +1,7 @@
-[Languages]: C#, Golang
+
+![Demo](Rust/images/phase3-vulkan-demo-phase3.png)
+
+[Languages]: C#, Golang, Rust
 
 [Description]
 An open source Math Library, that assists Engineers, Mathematicians, Statisticians and Software Developers.
